@@ -1,6 +1,6 @@
 const CACHE = 'fazaa-v1';
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/index.html', '/logo.svg'])));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/', '/index.html', '/logo-shield.png'])));
   self.skipWaiting();
 });
 self.addEventListener('activate', (e) => {

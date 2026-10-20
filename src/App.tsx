@@ -40,7 +40,7 @@ export default function App() {
       <div className={`phone ${font} text-obsidian`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         {/* Top app bar */}
         <header className="sticky top-0 z-20 flex items-center gap-3 bg-obsidian px-4 pb-3 pt-[max(12px,env(safe-area-inset-top))] text-white">
-          <img src="/logo.svg" alt="" className="h-10 w-10" />
+          <img src="/logo-shield.png" alt="FAZA'A" className="h-11 w-11 rounded-xl bg-white object-contain p-0.5" />
           <div className="min-w-0 flex-1 leading-tight">
             <div className="text-lg font-bold">{lang === 'ar' ? 'فزعة' : "FAZA'A"}</div>
             <div className="text-[10.5px] leading-snug text-silver/70">{t('tagline', lang)}</div>
@@ -402,12 +402,8 @@ function PlansTab({ lang }: { lang: Lang }) {
 function AboutSheet({ lang, onClose }: { lang: Lang; onClose: () => void }) {
   return (
     <Sheet title={t('about', lang)} lang={lang} onClose={onClose}>
-      <div className="flex items-center gap-3 rounded-2xl bg-obsidian p-3 text-white">
-        <img src="/logo.svg" alt="" className="h-12 w-12" />
-        <div>
-          <div className="font-bold">فزعة — FAZA'A</div>
-          <div className="text-xs text-silver/70">Road Assistance & Car Delivery</div>
-        </div>
+      <div className="rounded-2xl bg-white p-3">
+        <img src="/logo-full.png" alt="فزعة — FAZA'A Road Assistance & Car Delivery" className="mx-auto w-full max-w-[320px]" />
       </div>
       <p className="mt-3 text-sm leading-relaxed text-obsidian/75">{t('aboutBody', lang)}</p>
       <h4 className="mb-2 mt-4 flex items-center gap-2 text-sm font-bold"><LifeBuoy size={16} className="text-crimson" />{t('team', lang)}</h4>
