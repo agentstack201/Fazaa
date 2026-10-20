@@ -1,5 +1,5 @@
 {
-  "app_url": "https://fazaa-app.vercel.app",
+  "app_url": "https://fazaa-app-rose.vercel.app",
   "timezone": "Asia/Riyadh",
   "regions": [
     { "id": "riyadh", "ar": "الرياض", "en": "Riyadh", "hub_ar": "الرياض", "hub_en": "Riyadh", "cars": 22, "workshops": 4, "eta": 25 },

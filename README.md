@@ -20,7 +20,7 @@ The app works immediately on seeded local state (`src/seed.json`), persisted in 
 All reads/writes go through `src/lib/db.ts` (PostgREST via `@supabase/supabase-js`, plus Realtime on the tracker). If the database is unreachable the app falls back to local mode.
 
 ## Deploy to Vercel
-Import the repo in Vercel (framework auto-detected from `vercel.json`) and add the two `VITE_` env vars if using Supabase. The presentation QR points to `https://fazaa-app.vercel.app`; use that project name or regenerate the QR for your URL.
+Import the repo in Vercel (framework auto-detected from `vercel.json`) and add the two `VITE_` env vars if using Supabase. The presentation QR points to `https://fazaa-app-rose.vercel.app`; use that project name or regenerate the QR for your URL.
 
 ## Screenshot mode
 Query params: `?lang=en|ar&tab=sos|tracker|plans&demo&mute&still`.
