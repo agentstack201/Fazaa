@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-display: swap; src: local('IBM Plex Sans'), url('/fonts/IBMPlexSans-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 600; font-display: swap; src: local('IBM Plex Sans SemiBold'), url('/fonts/IBMPlexSans-SemiBold.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 700; font-display: swap; src: local('IBM Plex Sans Bold'), url('/fonts/IBMPlexSans-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans Arabic'; font-weight: 400; font-display: swap; src: local('IBM Plex Sans Arabic'), url('/fonts/IBMPlexSansArabic-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans Arabic'; font-weight: 600; font-display: swap; src: local('IBM Plex Sans Arabic SemiBold'), url('/fonts/IBMPlexSansArabic-SemiBold.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans Arabic'; font-weight: 700; font-display: swap; src: local('IBM Plex Sans Arabic Bold'), url('/fonts/IBMPlexSansArabic-Bold.woff2') format('woff2'); }
+
+html, body, #root { height: 100%; }
+body { margin: 0; background: #0b0c0e; -webkit-tap-highlight-color: transparent; }
+
+.backdrop {
+  min-height: 100dvh;
+  background: radial-gradient(1200px 600px at 50% -10%, #3a1416 0%, #121316 55%, #0b0c0e 100%);
+}
+
+/* Phone frame: edge-to-edge on phones, bezel on larger screens */
+.phone { width: 100%; max-width: 430px; height: 100dvh; margin: 0 auto; background: #fff; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+@media (min-width: 640px) {
+  .backdrop { display: grid; place-items: center; padding: 24px 0; }
+  .phone { min-height: 0; height: min(932px, calc(100dvh - 48px)); border-radius: 46px; border: 10px solid #1c1e22; box-shadow: 0 0 0 1px #2a2d33, 0 30px 80px rgba(0,0,0,.55), 0 0 120px rgba(158,27,32,.18); }
+}
+
+.scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; }
+.scroll::-webkit-scrollbar { display: none; }
+
+@keyframes pulse-ring { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.55); opacity: 0; } }
+.pulse-ring { position: absolute; inset: 0; border-radius: 9999px; background: #9E1B20; animation: pulse-ring 1.8s cubic-bezier(.2,.6,.3,1) infinite; }
+.pulse-ring.d2 { animation-delay: .9s; }
+@keyframes sheet-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.sheet { animation: sheet-up .22s ease-out; }
+.no-motion .pulse-ring { animation: none; opacity: .18; transform: scale(1.18); }
+
+/* Screenshot mode: transparent page so only the phone frame is captured over the showcase */
+.no-motion.backdrop { background: transparent; }

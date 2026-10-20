@@ -1,0 +1,64 @@
+{
+  "app_url": "https://fazaa-app.vercel.app",
+  "timezone": "Asia/Riyadh",
+  "regions": [
+    { "id": "riyadh", "ar": "الرياض", "en": "Riyadh", "hub_ar": "الرياض", "hub_en": "Riyadh", "cars": 22, "workshops": 4, "eta": 25 },
+    { "id": "makkah", "ar": "مكة المكرمة", "en": "Makkah", "hub_ar": "جدة", "hub_en": "Jeddah", "cars": 20, "workshops": 4, "eta": 28 },
+    { "id": "madinah", "ar": "المدينة المنورة", "en": "Madinah", "hub_ar": "المدينة المنورة", "hub_en": "Madinah", "cars": 9, "workshops": 2, "eta": 32 },
+    { "id": "qassim", "ar": "القصيم", "en": "Al-Qassim", "hub_ar": "بريدة", "hub_en": "Buraidah", "cars": 8, "workshops": 2, "eta": 30 },
+    { "id": "eastern", "ar": "المنطقة الشرقية", "en": "Eastern Province", "hub_ar": "الدمام", "hub_en": "Dammam", "cars": 18, "workshops": 3, "eta": 27 },
+    { "id": "asir", "ar": "عسير", "en": "Asir", "hub_ar": "أبها", "hub_en": "Abha", "cars": 8, "workshops": 2, "eta": 38 },
+    { "id": "tabuk", "ar": "تبوك", "en": "Tabuk", "hub_ar": "تبوك", "hub_en": "Tabuk", "cars": 6, "workshops": 1, "eta": 42 },
+    { "id": "hail", "ar": "حائل", "en": "Hail", "hub_ar": "حائل", "hub_en": "Hail", "cars": 6, "workshops": 1, "eta": 40 },
+    { "id": "northern", "ar": "الحدود الشمالية", "en": "Northern Borders", "hub_ar": "عرعر", "hub_en": "Arar", "cars": 4, "workshops": 1, "eta": 48 },
+    { "id": "jazan", "ar": "جازان", "en": "Jazan", "hub_ar": "جازان", "hub_en": "Jazan", "cars": 6, "workshops": 1, "eta": 40 },
+    { "id": "najran", "ar": "نجران", "en": "Najran", "hub_ar": "نجران", "hub_en": "Najran", "cars": 5, "workshops": 1, "eta": 45 },
+    { "id": "baha", "ar": "الباحة", "en": "Al-Baha", "hub_ar": "الباحة", "hub_en": "Al-Baha", "cars": 4, "workshops": 1, "eta": 44 },
+    { "id": "jouf", "ar": "الجوف", "en": "Al-Jouf", "hub_ar": "سكاكا", "hub_en": "Sakaka", "cars": 4, "workshops": 1, "eta": 46 }
+  ],
+  "cars": [
+    { "id": "economy", "ar": "اقتصادية", "en": "Economy", "model": "Hyundai Accent 2025", "seats": 5 },
+    { "id": "sedan", "ar": "سيدان", "en": "Sedan", "model": "Toyota Camry 2025", "seats": 5 },
+    { "id": "suv", "ar": "عائلية SUV", "en": "SUV", "model": "Toyota Fortuner 2025", "seats": 7 }
+  ],
+  "tiers": [
+    { "id": "pay", "ar": "حسب الطلب", "en": "Pay per Call", "price": 349, "unit_ar": "ر.س / طلب", "unit_en": "SAR / request", "f_ar": ["سيارة بديلة حتى 3 أيام", "سحب إلى ورشة شريكة"], "f_en": ["Replacement car up to 3 days", "Towing to a partner workshop"] },
+    { "id": "plus", "ar": "فزعة بلس", "en": "FAZA'A Plus", "price": 79, "unit_ar": "ر.س / شهر", "unit_en": "SAR / month", "f_ar": ["4 طلبات سنويًا", "سيارة بديلة حتى انتهاء الإصلاح", "متابعة الورشة"], "f_en": ["4 requests per year", "Replacement car until repair ends", "Workshop follow-up"] },
+    { "id": "fleet", "ar": "أساطيل الشركات", "en": "Business Fleet", "price": 1490, "unit_ar": "ر.س / مركبة / سنة", "unit_en": "SAR / vehicle / year", "f_ar": ["طلبات غير محدودة", "مدير حساب مخصص", "تقارير شهرية"], "f_en": ["Unlimited requests", "Dedicated account manager", "Monthly reports"] }
+  ],
+  "costs": [
+    { "id": "fleet", "ar": "تأجير أسطول السيارات البديلة", "en": "Replacement fleet leasing", "basis_ar": "120 سيارة × 2,400", "basis_en": "120 cars x 2,400", "monthly": 288000 },
+    { "id": "staff", "ar": "المختصون الميدانيون", "en": "Field specialists", "basis_ar": "52 مختص × 7,500", "basis_en": "52 staff x 7,500", "monthly": 390000 },
+    { "id": "towing", "ar": "لوجستيات السحب", "en": "Towing logistics", "basis_ar": "26 سطحة × 6,500", "basis_en": "26 flatbeds x 6,500", "monthly": 169000 },
+    { "id": "workshops", "ar": "اتفاقيات الورش المتخصصة", "en": "Specialized workshop SLAs", "basis_ar": "13 منطقة × 9,000", "basis_en": "13 regions x 9,000", "monthly": 117000 },
+    { "id": "tech", "ar": "التقنية والسحابة", "en": "Tech & cloud", "basis_ar": "Supabase + Vercel + SMS + خرائط", "basis_en": "Supabase + Vercel + SMS + maps", "monthly": 18500 }
+  ],
+  "sample_request": {
+    "id": "FZ-26-0417",
+    "region": "riyadh",
+    "incident": "breakdown",
+    "car": "sedan",
+    "plate": "RSJ 4827",
+    "phone": "0554102387",
+    "workshop_ar": "ورشة فزعة الشريكة — السلي، الرياض",
+    "workshop_en": "FAZA'A Partner Workshop — Al Sulay, Riyadh",
+    "specialist_ar": "سلطان العتيبي",
+    "specialist_en": "Sultan Alotaibi",
+    "base_time": "2026-10-20T14:05:00+03:00",
+    "step_times": [
+      "2026-10-20T14:05:00+03:00",
+      "2026-10-20T14:31:00+03:00",
+      "2026-10-20T15:12:00+03:00",
+      "2026-10-21T10:40:00+03:00",
+      "2026-10-22T13:15:00+03:00"
+    ],
+    "current_step": 3
+  },
+  "team": [
+    { "name": "Nawaf Fahad Alharbi", "id": "170490" },
+    { "name": "Abdulaziz Alfarraj", "id": "170467" },
+    { "name": "Faris Alsuhaibani", "id": "170426" },
+    { "name": "Mohammed Aljuryban", "id": "171623" },
+    { "name": "Hatim Alsubaie", "id": "170503" }
+  ]
+}
