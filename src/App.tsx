@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import {
   AlertTriangle, Car, CarFront, Check, ChevronDown, Clock, Database, Info, LifeBuoy, MapPin,
   Phone, Route, ShieldCheck, Siren, Truck, Volume2, VolumeX, Warehouse, Wrench, X, CreditCard,
-  RotateCcw, ChevronsRight, Users, Building2, Hash,
+  RotateCcw, ChevronsRight, Hash,
 } from 'lucide-react';
 import seed from './seed.json';
 import { db, type CarId, type Incident } from './lib/db';
@@ -326,10 +326,8 @@ function Info2({ icon, v, ltr }: { icon: React.ReactNode; v: string; ltr?: boole
 /* ---------------- Tab 3: Plans ---------------- */
 function PlansTab({ lang }: { lang: Lang }) {
   const [sel, setSel] = useState(params.get('region') ?? 'riyadh');
-  const total = useMemo(() => seed.costs.reduce((a, c) => a + c.monthly, 0), []);
   const totalCars = seed.regions.reduce((a, r) => a + r.cars, 0);
   const totalWs = seed.regions.reduce((a, r) => a + r.workshops, 0);
-  const costIcons = [Car, Users, Truck, Building2, Database];
 
   return (
     <div className="px-4 pb-8 pt-5">
@@ -373,27 +371,6 @@ function PlansTab({ lang }: { lang: Lang }) {
         ))}
       </div>
 
-      <SectionTitle>{t('costs', lang)}</SectionTitle>
-      <div className="overflow-hidden rounded-2xl border border-silver bg-white">
-        {seed.costs.map((c, i) => {
-          const Icon = costIcons[i];
-          return (
-            <div key={c.id} className="flex items-center gap-3 border-b border-silver px-3 py-2.5 last:border-0">
-              <Icon size={18} className="shrink-0 text-crimson" />
-              <div className="min-w-0 flex-1">
-                <div className="text-[13px] font-semibold">{lang === 'ar' ? c.ar : c.en}</div>
-                <div className="text-[10px] text-obsidian/50">{lang === 'ar' ? c.basis_ar : c.basis_en}</div>
-              </div>
-              <div className="text-sm font-bold">{num(c.monthly, lang)}</div>
-            </div>
-          );
-        })}
-        <div className="flex items-center justify-between bg-obsidian px-3 py-3 text-white">
-          <span className="font-bold">{t('total', lang)}</span>
-          <span className="text-lg font-bold">{num(total, lang)} <span className="text-xs text-silver/70">{t('sar', lang)}</span></span>
-        </div>
-      </div>
-      <p className="mt-2 px-1 text-[11px] text-obsidian/50">{t('assumed', lang)}</p>
     </div>
   );
 }
